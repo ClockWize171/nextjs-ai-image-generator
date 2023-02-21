@@ -1,6 +1,14 @@
 
 
 export const colors = {
+  styles: {
+    global: (props) => ({
+      body: {
+        fontFamily: 'Lato',
+        color: mode('myPurple.10', 'myPurple.20')(props),
+      },
+    }),
+  },
   fonts: {
     heading: `'Lato', sans-serif`,
     body: `'Lato', sans-serif`,

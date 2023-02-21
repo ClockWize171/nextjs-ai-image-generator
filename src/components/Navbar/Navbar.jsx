@@ -1,53 +1,53 @@
-import React, { useRef } from 'react'
-import { Flex, Box, Spacer, Center, Text } from '@chakra-ui/react'
+import React from 'react'
 import Image from 'next/image'
+import {
+  Flex,
+  Box,
+  Spacer,
+  Text,
+  useMediaQuery,
+  useDisclosure,
+  useColorModeValue,
+  useColorMode,
+  IconButton,
+  Avatar,
+} from '@chakra-ui/react'
+import { RxHamburgerMenu } from "react-icons/rx";
+import SideMenu from './SideMenu'
 import lightLogo from '../../assets/logo-white.svg'
 import darkLogo from '../../assets/logo-dark.svg'
-import MenuToggle from './MenuToggle'
-import { motion, useCycle } from 'framer-motion'
 import styles from './Navbar.module.css'
 
 const Navbar = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-
-  const sidebar = {
-    open: (height = 1000) => ({
-      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-      transition: {
-        type: "spring",
-        stiffness: 20,
-        restDelta: 2
-      }
-    }),
-    closed: {
-      clipPath: "circle(30px at 40px 40px)",
-      transition: {
-        delay: 0.5,
-        type: "spring",
-        stiffness: 400,
-        damping: 40
-      }
-    }
-  };
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
+  const { colorMode } = useColorMode()
+  const isDark = colorMode === "dark"
 
   return (
     <Flex justifyContent='center' alignItems='center' p={3}>
       <Box>
-        <motion.div
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          ref={containerRef}>
-          <motion.div className={styles.background} style={{ background: isOpen ? 'white' : 'white' }} variants={sidebar} />
-          <MenuToggle toggle={() => toggleOpen()} />
-        </motion.div>
+        <IconButton
+          color={useColorModeValue('myPurple.10', 'myPurple.40')}
+          onClick={onOpen}
+          size='lg'
+          bg='transparent'
+          _hover={{ bg: 'transparent' }}
+          aria-label='Hamburger'
+          icon={<RxHamburgerMenu size={30} />} />
+        <SideMenu isOpen={isOpen} onClose={onClose} />
       </Box>
       <Box px={3}>
-        <Image src={lightLogo} alt='logo' />
+        <Image src={useColorModeValue(lightLogo, darkLogo)} className={styles.logo} alt='logo' placeholder="blur"
+          blurDataURL={'../../assets/logo-white.svg'} />
       </Box>
       <Spacer />
       <Box>
-        thetminhtin@gmail.com
+        {isLargerThan768 ?
+          <Text color={isDark ? 'myPurple.40' : 'myPurple.10'}>
+            thetminhtin998@gmail.com
+          </Text>
+          : <Avatar name='Kent Dodds' src='https://bit.ly/kent-c-dodds' />}
       </Box>
     </Flex>
   )
