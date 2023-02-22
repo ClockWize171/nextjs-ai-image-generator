@@ -3,6 +3,7 @@ import React from 'react'
 import darklogo from '../../assets/logo-dark.svg'
 import lightlogo from '../../assets/logo-white.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   Drawer,
   DrawerBody,
@@ -31,31 +32,33 @@ const SideMenu = ({ isOpen, onClose }) => {
     >
       <DrawerOverlay />
       <DrawerContent bgGradient={useColorModeValue(
-        'linear(to-tl, myPurple.20, myPurple.40)',
-        'linear(to-tl, myPurple.10, myPurple.20)'
+        'linear(to-tl, myPurple.10, myPurple.20)',
+        'linear(to-tl, myPurple.20, myPurple.40)'
       )}>
-        <DrawerCloseButton size='lg' color={useColorModeValue('myPurple.10', 'myPurple.40')} />
+        <DrawerCloseButton size='lg' color={useColorModeValue('myPurple.40', 'myPurple.10')} />
         <DrawerHeader>
-          <Image src={useColorModeValue(lightlogo, darklogo)} alt='logo' />
+          <Image src={useColorModeValue(darklogo, lightlogo)} alt='logo' />
         </DrawerHeader>
 
         <DrawerBody>
           <Flex flexDir='column' justifyContent='center' alignItems='center' >
             {link.map((link, index) => (
               <Box key={index} w='full' my={5}>
-                <Button
-                  size='lg'
-                  color={useColorModeValue('myPurple.10', 'myPurple.40')}
-                  boxShadow='lg'
-                  _hover={{ bg: 'transparent', boxShadow: 'inner' }}
-                  w='full'
-                  as={motion.div}
-                  variant='ghost'
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition='0.01s'>
-                  {link.name}
-                </Button>
+                <Link href={link.link}>
+                  <Button
+                    size='lg'
+                    color={useColorModeValue('myPurple.40', 'myPurple.10')}
+                    boxShadow='lg'
+                    _hover={{ bg: 'transparent', boxShadow: 'inner' }}
+                    w='full'
+                    as={motion.div}
+                    variant='ghost'
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition='0.01s'>
+                    {link.name}
+                  </Button>
+                </Link>
               </Box>
             ))}
             <Box>
@@ -67,11 +70,11 @@ const SideMenu = ({ isOpen, onClose }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
                 transition='0.01s'
-                color={useColorModeValue('myPurple.10', 'myPurple.40')}
+                color={useColorModeValue('myPurple.40', 'myPurple.10')}
                 boxShadow='lg'
                 variant='ghost'
                 _hover={{ bg: 'transparent', boxShadow: 'inner' }}
-                icon={useColorModeValue(<RxSun size='25' />, <RxMoon size='25' />)}
+                icon={useColorModeValue(<RxMoon size='25' />, <RxSun size='25' />)}
               />
             </Box>
           </Flex>
