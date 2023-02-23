@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Button, Flex, Text, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import sectionTwoImg from '../assets/section-two-image.png'
 import { upDownAnimate } from '@/utils/animation'
@@ -29,25 +30,27 @@ const SectionTwo = () => {
           from well-trained model called <Text as='b'><i>ChatGPT</i></Text>
         </Text>
         <Box mt={5}>
-          <Button
-            as={motion.div}
-            borderRadius='none'
-            px={10}
-            size='lg'
-            color={useColorModeValue('myPurple.40', 'myPurple.10')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
-            bgGradient={useColorModeValue(
-              'linear(to-tl, primary.20, secondary.10)',
-              'linear(to-tl, myPurple.30 30%, secondary.30)'
-            )}
-            _hover={{ bg: 'transparent' }}
-            transition='0.01s'
-            boxShadow='lg'
-            variant='ghost'
-          >
-            Try ChatGPT
-          </Button>
+          <Link href='/chatgpt'>
+            <Button
+              as={motion.div}
+              borderRadius='none'
+              px={10}
+              size='lg'
+              color={useColorModeValue('myPurple.40', 'myPurple.10')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              bgGradient={useColorModeValue(
+                'linear(to-tl, primary.20, secondary.10)',
+                'linear(to-tl, myPurple.30 30%, secondary.30)'
+              )}
+              _hover={{ bg: 'transparent' }}
+              transition='0.01s'
+              boxShadow='lg'
+              variant='ghost'
+            >
+              Try ChatGPT
+            </Button>
+          </Link>
         </Box>
       </Flex>
     </Flex>

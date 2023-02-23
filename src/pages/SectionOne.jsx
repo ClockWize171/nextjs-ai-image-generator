@@ -2,7 +2,8 @@ import React from 'react'
 import { Box, Flex, Text, Button, useColorModeValue } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import sectionOneImg from '../assets/section-one-image.png'
+import Link from 'next/link'
+import sectionOneImg from '../assets/section-one-image.svg'
 import { upDownAnimate } from '@/utils/animation'
 
 const SectionOne = () => {
@@ -22,25 +23,28 @@ const SectionOne = () => {
         </Text>
       </Box>
       <Box mt={10}>
-        <Button
-          as={motion.div}
-          borderRadius='none'
-          px={10}
-          size='lg'
-          color={useColorModeValue('myPurple.40', 'myPurple.10')}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          bgGradient={useColorModeValue(
-            'linear(to-tl, primary.20, secondary.10)',
-            'linear(to-tl, myPurple.30 30%, secondary.30)'
-          )}
-          _hover={{ bg: 'transparent' }}
-          transition='0.01s'
-          boxShadow='lg'
-          variant='ghost'
-        >
-          Try Dall-E
-        </Button>
+        <Link href='/dall-e'>
+          <Button
+            as={motion.div}
+            borderRadius='none'
+            px={10}
+            size='lg'
+            color={useColorModeValue('myPurple.40', 'myPurple.10')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            bgGradient={useColorModeValue(
+              'linear(to-tl, primary.20, secondary.10)',
+              'linear(to-tl, myPurple.30 30%, secondary.30)'
+            )}
+            _hover={{ bg: 'transparent' }}
+            transition='0.01s'
+            boxShadow='lg'
+            variant='ghost'
+          >
+            Try Dall-E
+          </Button>
+        </Link>
+
       </Box>
     </Flex>
   )

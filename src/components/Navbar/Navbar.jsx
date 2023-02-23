@@ -17,6 +17,7 @@ import SideMenu from './SideMenu'
 import lightLogo from '../../assets/logo-white.svg'
 import darkLogo from '../../assets/logo-dark.svg'
 import styles from './Navbar.module.css'
+import Link from 'next/link';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -25,7 +26,7 @@ const Navbar = () => {
   const isDark = colorMode === "dark"
 
   return (
-    <Flex justifyContent='center' alignItems='center' p={3}>
+    <Flex justifyContent='center' alignItems='center' h='10vh' px={[2,10]}>
       <Box>
         <IconButton
           color={useColorModeValue('myPurple.40', 'myPurple.10')}
@@ -38,12 +39,14 @@ const Navbar = () => {
         <SideMenu isOpen={isOpen} onClose={onClose} />
       </Box>
       <Box px={3}>
-        <Image
-          src={useColorModeValue(darkLogo, lightLogo)}
-          className={styles.logo}
-          alt='logo'
-          placeholder="blur"
-          blurDataURL={'../../assets/logo-white.svg'} />
+        <Link href='/'>
+          <Image
+            src={useColorModeValue(darkLogo, lightLogo)}
+            className={styles.logo}
+            alt='logo'
+            placeholder="blur"
+            blurDataURL={'../../assets/logo-white.svg'} />
+        </Link>
       </Box>
       <Spacer />
       <Box>
