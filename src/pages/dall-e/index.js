@@ -26,7 +26,12 @@ const DallE = () => {
         justifyContent='center'
         alignItems='center'>
         <Flex justifyContent='center' alignSelf='center'>
-          <Image className={styles.image} src={dallEimg} alt='Robot Image' />
+          <Image
+            className={styles.image}
+            src={dallEimg}
+            alt='Robot Image'
+            placeholder='blur'
+            blurDataURL={dallEimg.src} />
         </Flex>
         <Box>
           <Text fontSize={['lg', '2xl']} color={useColorModeValue('myPurple.40', 'myPurple.10')}>

@@ -12,7 +12,6 @@ const SectionTwo = () => {
       flexDir={['column', 'column', 'row']}
       justifyContent='center'
       alignItems='center'
-      // h='full'
       px={10}>
       <Box w='full' as={motion.div} animation={upDownAnimate}>
         <Image src={sectionTwoImg} style={{ margin: 'auto' }} width={600} alt='section-two-imge' />
