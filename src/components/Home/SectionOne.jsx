@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import sectionOneImg from '../assets/section-one-image.webp'
+import sectionOneImg from '@/assets/section-one-image.webp'
 import MyButton from '@/components/MyButton/MyButton'
 import { upDownAnimate } from '@/utils/animation'
 

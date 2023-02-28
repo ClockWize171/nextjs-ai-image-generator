@@ -5,9 +5,9 @@ import styles from '../styles/Home.module.css'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import darkimg from '../assets/home-bg-dark.svg'
 import lightimg from '../assets/home-bg-light.svg'
-import SectionOne from "./SectionOne"
-import SectionTwo from "./SectionTwo"
-import Footer from "./Footer"
+import SectionOne from "@/components/Home/SectionOne"
+import SectionTwo from "@/components/Home/SectionTwo"
+import Footer from "@/components/Home/Footer"
 
 export default function Home() {
   return (

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import imgLoaderDark from '../../assets/img-loader-dark.png'
 import imgLoaderLight from '../../assets/img-loader-light.png'
-import styles from './DallE.module.css'
+import styles from '@/styles/DallE.module.css'
 import { FaCloudDownloadAlt, FaUndoAlt } from 'react-icons/fa'
 
 const Result = ({ image, setImage }) => {
@@ -82,7 +82,7 @@ const Result = ({ image, setImage }) => {
           <>No Image</>
         }
 
-          <MyButton text='Go to Download' icon={<FaCloudDownloadAlt />} downloadImage={downloadImage} />
+        <MyButton text='Go to Download' icon={<FaCloudDownloadAlt />} downloadImage={downloadImage} />
       </Flex>
     </Flex>
   )

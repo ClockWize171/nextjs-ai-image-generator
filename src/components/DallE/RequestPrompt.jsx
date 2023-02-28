@@ -17,7 +17,7 @@ import {
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import dallEimg from '../../assets/dall-e-image.png'
-import styles from './DallE.module.css'
+import styles from '@/styles/DallE.module.css'
 
 const RequestPrompt = ({
   setResolution,

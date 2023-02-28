@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Box, useColorModeValue, useMediaQuery } from '@chakra-ui/react'
 import Navbar from '@/components/Navbar/Navbar'
 import Head from 'next/head';
-import RequestPrompt from './RequestPrompt';
-import Result from './Result';
+import RequestPrompt from '@/components/DallE/RequestPrompt';
+import Result from '@/components/DallE/Result';
 import Loader from '@/components/Loader/Loader';
-import styles from './DallE.module.css'
+import styles from '@/styles/DallE.module.css'
 
 const DallE = () => {
   const [userPrompt, setUserPrompt] = useState('');

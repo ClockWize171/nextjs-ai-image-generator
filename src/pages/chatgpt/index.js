@@ -12,10 +12,10 @@ import {
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar/Navbar'
 import { FiSend, FiRefreshCcw } from "react-icons/fi";
-import styles from './Chatgpt.module.css'
+import styles from '../../styles/Chatgpt.module.css'
 import Head from 'next/head'
-import Chat from './Chat'
-import LoadingSkeleton from './LoadingSkeleton';
+import Chat from '@/components/Chatgpt/Chat'
+import LoadingSkeleton from '@/components/Chatgpt/LoadingSkeleton';
 
 const ChatGPT = () => {
 
