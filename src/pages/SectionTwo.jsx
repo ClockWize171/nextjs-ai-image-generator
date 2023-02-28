@@ -1,10 +1,11 @@
 import React from 'react'
-import { Box, Button, Flex, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import sectionTwoImg from '../assets/section-two-image.png'
-import { upDownAnimate } from '@/utils/animation'
+import sectionTwoImg from '../assets/section-two-image.webp'
+import { upDownAnimate } from '@/utils/animation';
+import MyButton from '@/components/MyButton/MyButton'
 
 const SectionTwo = () => {
   return (
@@ -14,7 +15,11 @@ const SectionTwo = () => {
       alignItems='center'
       px={10}>
       <Box w='full' as={motion.div} animation={upDownAnimate}>
-        <Image src={sectionTwoImg} style={{ margin: 'auto' }} width={600} alt='section-two-imge' />
+        <Image
+          src={sectionTwoImg}
+          style={{ margin: 'auto' }}
+          width={600}
+          alt='section-two-imge' />
       </Box>
       <Flex
         w='full'
@@ -30,25 +35,7 @@ const SectionTwo = () => {
         </Text>
         <Box mt={5}>
           <Link href='/chatgpt'>
-            <Button
-              as={motion.div}
-              borderRadius='none'
-              px={10}
-              size='lg'
-              color={useColorModeValue('myPurple.40', 'myPurple.10')}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.9 }}
-              bgGradient={useColorModeValue(
-                'linear(to-tl, primary.20, secondary.10)',
-                'linear(to-tl, myPurple.30 30%, secondary.30)'
-              )}
-              _hover={{ bg: 'transparent' }}
-              transition='0.01s'
-              boxShadow='lg'
-              variant='ghost'
-            >
-              Try ChatGPT
-            </Button>
+            <MyButton pages='home' text='Try ChatGPT' />
           </Link>
         </Box>
       </Flex>

@@ -35,7 +35,12 @@ const About = () => {
       )}
 
     >
-      <Head><title>Dall-E</title></Head>
+      <Head>
+        <title>About this website</title>
+        <meta name="description" content="About this web application" />
+        <meta property="og:title" content="About - What's on your mind?" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+      </Head>
       <Navbar />
       <Flex
         color={useColorModeValue('myPurple.40', 'myPurple.10')}
@@ -43,11 +48,11 @@ const About = () => {
         flexDir='column'
         justifyContent='center'
         alignItems='center'>
-        <Text fontSize={['3xl','4xl']} fontWeight='bold'>About This Page</Text>
+        <Text fontSize={['3xl', '4xl']} fontWeight='bold'>About This Page</Text>
         <Box>
           <Image src={img} width={300} alt='about-image' />
         </Box>
-        <Box px={[10, 10,0]}>
+        <Box px={[10, 10, 0]}>
           <List spacing={5} fontSize={['md', 'xl']}>
             <ListItem>
               <ListIcon as={FaRobot} color={useColorModeValue('myPurple.40', 'myPurple.10')} />

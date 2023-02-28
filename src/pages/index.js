@@ -2,7 +2,7 @@ import React from "react"
 import Head from "next/head"
 import Navbar from "@/components/Navbar/Navbar"
 import styles from '../styles/Home.module.css'
-import { Text, Container, Box, useColorModeValue } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 import darkimg from '../assets/home-bg-dark.svg'
 import lightimg from '../assets/home-bg-light.svg'
 import SectionOne from "./SectionOne"
@@ -12,7 +12,12 @@ import Footer from "./Footer"
 export default function Home() {
   return (
     <section className={styles.container}>
-      <Head><title>Home</title></Head>
+      <Head>
+        <title>Home</title>
+        <meta name="description" content="Generate your photo from your imagination and ask possible question to OpenAI in one place" />
+        <meta property="og:title" content="Home - What's on your mind?" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+      </Head>
       <Box style={{
         backgroundImage: useColorModeValue(
           `url(${lightimg.src})`,
