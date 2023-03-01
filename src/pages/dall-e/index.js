@@ -54,7 +54,7 @@ const DallE = () => {
     const handleAttempt = () => {
       if (attempt === 5) {
         // WaitTime Control Here!
-        setWaitTime(30)
+        setWaitTime(60)
         setDisable(true)
         setAttempt(0)
       }
