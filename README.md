@@ -27,6 +27,17 @@ A Simple NextJS web app which is provided image generation and text completion b
 
 ***Live Demo*** - https://whats-on-your-mind.vercel.app/
 
+## Installation in local
+
+### `npm install`
+
+Installs the required packages by NodeJS.
+
+### `npm run dev`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
 # Reference Assets
 - https://iconscout.com/3d-pack/cube-robot
 - https://www.flaticon.com/free-icon/artificial-intelligence_9594599?related_id=9594599
